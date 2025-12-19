@@ -6,8 +6,11 @@ Estás en Tasks.
 <hr>
 {% for task in tasks %}
     <div> 
-        <h3>{{task.title}}</h3>
+        <h3>
+            <a href="{% url 'tasks:task' task.pk %}">{{task.title}}</a>
+        </h3>
         <p>{{task.description}}</p>
+        <p>completado: {{task.completed}}</p>
         <small>fecha límite: {{task.limit_date}}</small>
     </div>
     <hr>

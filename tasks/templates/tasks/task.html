@@ -1,0 +1,10 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<h1>{{task.title}}</h1>
+<p>{{task.description}}</p>
+<p>completado: {{task.completed}}</p>
+<small>fecha límite: {{task.limit_date|date:"d/m/Y H:i"}}</small>
+
+{% endblock content %}
