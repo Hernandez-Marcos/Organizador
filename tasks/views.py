@@ -15,7 +15,7 @@ def index(request):
 def task(request, pk):
     task = get_object_or_404(Task, id=pk, user=request.user)
 
-    return render(request, 'tasks/task.html', {"task": task})
+    return render(request, "tasks/task.html", {"task": task})
 
 @login_required
 def createTask(request):
@@ -29,5 +29,18 @@ def createTask(request):
     else:
         form = TaskForm()
 
-    return render(request, 'tasks/form.html', {"form": form})
- 
+    return render(request, "tasks/form.html", {"form": form})
+
+
+@login_required
+def updateTask(request, pk):
+    task = get_object_or_404(Task, id=pk, user=request.user)
+
+    if request.method =="POST":
+        form = TaskForm(request.POST, instance=task)
+        if form.is_valid():
+            form.save()
+            return redirect("tasks:index")
+    else:
+        form = TaskForm(instance=task)
+    return render(request, "tasks/form.html", {"form": form})

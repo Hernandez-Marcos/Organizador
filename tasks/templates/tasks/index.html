@@ -12,6 +12,7 @@ Estás en Tasks.
         <p>{{task.description}}</p>
         <p>completado: {{task.completed}}</p>
         <small>fecha límite: {{task.limit_date}}</small>
+        <a href="{% url 'tasks:update-task' task.pk %}">Update task</a>
     </div>
     <hr>
 {% endfor %}
