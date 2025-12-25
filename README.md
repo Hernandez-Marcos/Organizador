@@ -48,7 +48,7 @@ This project was created as a **learning project**, focused on backend developme
 1. Clone the repository:
 
 ```bash
-git clone https://github.com/your-username/organizer.git
+git clone https://github.com/Hernandez-Marcos/Organizer.git
 cd organizer
 ```
 
